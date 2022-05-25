@@ -11,7 +11,8 @@
 
 # testing
 /coverage
-
+.vscode
+.idea
 # production
 /build
 

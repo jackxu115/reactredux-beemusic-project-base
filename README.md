@@ -1,4 +1,6 @@
-# Mark2Win CityView Project Base
+# Mark2Win Full Stack Bootcamp Project Base
+
+# ReactRedux BeeMusic Store
 
 ### Download or git clone it to your local environment and run:
 `npm i` to install the npm dependencies

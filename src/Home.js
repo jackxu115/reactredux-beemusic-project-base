@@ -1,23 +1,26 @@
 import './Home.scss'
 import axios from "axios";
 import {APIURL} from "./Helper";
-import {useEffect} from "react";
-
-const fetchData =() => {
-    console.log('i triggered,?')
-    axios.get(APIURL) // Promise
-        .then(res => console.log('data return', res.data))
-        .then(err => console.log('err fetching data', err))
-}
-
+import {useEffect, useState} from "react";
 
 const Home = () => {
+
+    const [rawSongList, setRawSongList] = useState([])
+
+    const fetchData = () => {
+        console.log('i triggered,?')
+        axios.get(APIURL) // Promise
+            .then(res => {
+                console.log('data return', res.data)
+                setRawSongList(res.data)
+            })
+            .catch(err => console.log('err fetching data', err))
+    }
 
     useEffect(fetchData, [])
     // no second parameter,
     // [], mount, render,
     // [],
-
 
     return (
         <section>
@@ -26,7 +29,7 @@ const Home = () => {
                     <div className="songList">
                         <div className="list">
                             <div className="listRow title">All List</div>
-                            <div className="listRow">body</div>
+                            <div className="listRow">{JSON.stringify(rawSongList)}</div>
                         </div>
                     </div>
                 </div>

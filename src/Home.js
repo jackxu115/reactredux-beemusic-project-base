@@ -7,17 +7,22 @@ const Home = () => {
 
     const [rawSongList, setRawSongList] = useState([])
 
-    const fetchData = () => {
+    const fetchData = async () => {
         console.log('i triggered,?')
-        axios.get(APIURL) // Promise
-            .then(res => {
-                console.log('data return', res.data)
-                setRawSongList(res.data)
-            })
-            .catch(err => console.log('err fetching data', err))
+
+        let res = await axios.get(APIURL) // Promise
+        console.log('data return', res.data)
+        setRawSongList(res.data)
+            // .then(res => {
+            //     console.log('data return', res.data)
+            //     setRawSongList(res.data)
+            // })
+            // .catch(err => console.log('err fetching data', err))
+
     }
 
-    useEffect(fetchData, [])
+    useEffect(() => fetchData, [])
+    console.log('hi')
     // no second parameter,
     // [], mount, render,
     // [],

@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  padding: 0;
+  background: linear-gradient(to bottom, black, rgb(31, 34, 34));
+  height: 100vh;
+  box-sizing: border-box;
+  color: white;
+}
+
+section {
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 30px;
+}
+.container .row {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: row;
+}
+.listContainer .songList {
+  border: 1px gray solid;
+  padding: 5px;
+  width: 33%;
+  min-width: 320px;
+  max-width: 420px;
+}
+.listContainer .songList .list {
+  border: 1px green solid;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+.listContainer .songList .list .listRow {
+  margin: 2px;
+  border: 1px red solid;
+}
+
+.title {
+  color: rgb(26, 210, 251);
+  font-size: 16px;
+  font-family: Ember, Helvetica, Arial, "sans-serif";
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+/*# sourceMappingURL=List.css.map */

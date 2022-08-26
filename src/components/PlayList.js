@@ -1,5 +1,6 @@
 import './List.scss'
 import {useSelector} from "react-redux";
+import SongRow from "./SongRow";
 
 const PlayList = () => {
 
@@ -9,7 +10,13 @@ const PlayList = () => {
             <div className="songList">
                 <div className="list">
                     <div className="listRow title">Play List</div>
-                    <div className="listRow">{JSON.stringify(songs)}</div>
+                    <div>
+                        {
+                            songs.filter(element => element.checked)
+                                .map((element, index) =>
+                                    <SongRow key={index} song={element}/>)
+                        }
+                    </div>
                 </div>
             </div>
         </div>

@@ -27,7 +27,7 @@ const fetchAllSongs = () => {
     }
 }
 
-const selectSongs = id => {
+const selectSong = id => {
 
     console.log(`[action] ${actionType.SELECT_SONG}`)
 
@@ -37,8 +37,31 @@ const selectSongs = id => {
     }
 }
 
+
+const likedSong = id => {
+
+    console.log(`[action] ${actionType.LIKED_SONG}`)
+
+    return {// action
+        type:actionType.LIKED_SONG,
+        payload: id,
+    }
+}
+
+const playSong = id => {
+
+    console.log(`[action] ${actionType.PLAYING_SONG}`)
+
+    return {// action
+        type:actionType.PLAYING_SONG,
+        payload: id,
+    }
+}
+
 export default {
     fetchAllSongs,
-    selectSongs
+    selectSong,
+    likedSong,
+    playSong
 }
 

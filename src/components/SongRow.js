@@ -3,14 +3,18 @@ import CheckBoxOutlineBlankOutlinedIcon from '@mui/icons-material/CheckBoxOutlin
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import {CheckedIcon, FavIcon, PlayingIcon} from "./FavIcon";
+import {useDispatch} from "react-redux";
+import actions from "../actions";
 
 const SongRow = ({song}) => {
+
+    const dispatch = useDispatch()
 
     return (
         <div className='songRow'>
             <div className='songRow_Index'>
                 <div>{song.id}</div>
-                <CheckedIcon checked={song.checked}/>
+                <CheckedIcon checked={song.checked} onClick={()=> dispatch(actions.songAction.selectSong(song.id))}/>
 
             </div>
             <div className='songRow_Image'>
@@ -27,8 +31,8 @@ const SongRow = ({song}) => {
             </div>
             <div className='songRow_Length'>{song.length}</div>
             <div className='songRow_Button'>
-                <FavIcon liked={song.liked}/>
-                <PlayingIcon playing={song.playing}/>
+                <FavIcon liked={song.liked} onClick={() => dispatch(actions.songAction.likedSong(song.id))}/>
+                <PlayingIcon playing={song.playing} onClick={()=> dispatch(actions.songAction.playSong(song.id))}/>
             </div>
         </div>
     )

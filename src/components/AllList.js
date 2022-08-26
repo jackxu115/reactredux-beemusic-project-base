@@ -12,7 +12,10 @@ const AllList = () => {
                 <div className="list">
                     <div className="listRow title">All List</div>
                     <div className="listRow">
-                        {songs.map((element, index )=> <SongRow key={index} song={element}/>)}
+                        {
+                            songs.map((element, index) =>
+                                <SongRow key={index} song={element}/>)
+                        }
                     </div>
                 </div>
             </div>

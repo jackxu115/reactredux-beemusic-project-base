@@ -15,7 +15,6 @@ section {
   text-align: center;
   margin: 0 auto;
   padding: 10px 0;
-  overflow: hidden;
   width: 100%;
 }
 
@@ -46,7 +45,7 @@ section {
   border: 1px gray solid;
   padding: 5px;
   width: 33%;
-  min-width: 460px;
+  min-width: 320px;
   max-width: 960px;
 }
 .listContainer .songList .list {

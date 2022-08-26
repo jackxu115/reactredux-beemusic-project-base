@@ -15,7 +15,7 @@
 .songRow_Content {
   display: flex;
   flex-direction: row;
-  min-width: 200px;
+  min-width: 100px;
   justify-content: space-between;
 }
 .songRow_Content_Title {

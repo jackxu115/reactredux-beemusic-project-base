@@ -7,6 +7,10 @@ const initState = {
 }
 
 export const songReducer = (state = initState, action) => {
+
+    let id = action.payload
+    let newSongList = [...state.rawSongList]
+
     switch (action.type) {
         case actionType.FETCH_ALL_SONGS:
             console.log(`[reducer] ${actionType.FETCH_ALL_SONGS}`, action.payload)
@@ -24,8 +28,28 @@ export const songReducer = (state = initState, action) => {
             return {...state, rawSongList: action.payload}
 
         case actionType.SELECT_SONG:
-            console.log(`[reducer] ${actionType.FETCH_ALL_SONGS}`, action.payload)
-            return {...this.state, id: action.payload}
+            console.log(`[reducer] ${actionType.SELECT_SONG}`, action.payload)
+            newSongList = newSongList.map(element =>
+                element.id === id ? {...element, checked: !element.checked} : element)
+
+            return {...state, rawSongList: newSongList}
+
+        case actionType.LIKED_SONG:
+            console.log(`[reducer] ${actionType.LIKED_SONG}`, action.payload)
+            newSongList = newSongList.map(element =>
+                element.id === id ? {...element, liked: !element.liked} : element)
+
+            return {...state, rawSongList: newSongList}
+
+        case actionType.PLAYING_SONG:
+            console.log(`[reducer] ${actionType.PLAYING_SONG}`, action.payload)
+            newSongList = newSongList.map(element =>
+                element.id === id ?
+                    {...element, playing: !element.playing}
+                    :
+                    {...element, playing: false})
+
+            return {...state, rawSongList: newSongList}
 
         default:
             return state

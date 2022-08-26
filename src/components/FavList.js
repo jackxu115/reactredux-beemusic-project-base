@@ -11,9 +11,13 @@ const FavList = () => {
         <div className="listContainer">
             <div className="songList">
                 <div className="list">
-                    <FavoriteBorderRoundedIcon/>
                     <div className="listRow title">Fav List</div>
                     <div className="listRow">
+                        {
+                            songs.filter(element => element.liked)
+                                .map((element, index) =>
+                                    <SongRow key={index} song={element}/>)
+                        }
                     </div>
                 </div>
             </div>

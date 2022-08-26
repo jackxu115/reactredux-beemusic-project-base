@@ -4,27 +4,29 @@ import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone
 import CheckBoxOutlineBlankTwoToneIcon from '@mui/icons-material/CheckBoxOutlineBlankTwoTone';
 import CheckBoxTwoToneIcon from '@mui/icons-material/CheckBoxTwoTone';
 
+import PlayCircleFilledWhiteOutlinedIcon from '@mui/icons-material/PlayCircleFilledWhiteOutlined';
 
-const FavIcon = ({liked}) => {
+
+const FavIcon = ({liked, ...rest}) => {
     return (
-        <div className='icon'>
+        <div className='icon' {...rest} >
             {liked ? <FavoriteTwoToneIcon/> : <FavoriteBorderTwoToneIcon/>}
         </div>
     )
 }
 
-const CheckedIcon = ({checked}) => {
+const CheckedIcon = ({checked, ...rest}) => {
     return (
-        <div className='icon'>
+        <div className='icon' {...rest}>
             {checked ? <CheckBoxTwoToneIcon/> : <CheckBoxOutlineBlankTwoToneIcon/>}
         </div>
     )
 }
 
-const PlayingIcon = ({playing}) => {
+const PlayingIcon = ({playing, ...rest}) => {
     return (
-        <div className='icon'>
-            {playing ? <img width='28px' src='img/play.gif'/> : <></>}
+        <div className='icon' {...rest}>
+            {playing ? <img width='28px' src='img/play.gif'/> : <PlayCircleFilledWhiteOutlinedIcon/>}
         </div>
     )
 }

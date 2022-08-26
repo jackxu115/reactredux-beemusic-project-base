@@ -1,20 +1,29 @@
 import {actionType} from "../Helper";
 
 const songs = [
-    {id: 1, name: 'One kiss', artist: 'Taylor', length: 3.34},
-    {id: 2, name: 'One kiss2', artist: 'Taylor', length: 3.34},
-    {id: 3, name: 'One kiss3', artist: 'Taylor', length: 3.34},
-    {id: 4, name: 'One kiss4', artist: 'Taylor', length: 3.34},
+    {id: 1, name: 'The Nights', artist: 'Avicii', length: 3.34, cover: 'img/album.jpg'},
+    {id: 2, name: 'The Nights2', artist: 'Avicii', length: 3.34, cover: 'img/album.jpg'},
+    {id: 3, name: 'The Nights3', artist: 'Avicii', length: 3.34, cover: 'img/album.jpg'},
+    {id: 4, name: 'The Nights4', artist: 'Avicii', length: 3.34, cover: 'img/album.jpg'},
+    {id: 5, name: 'The Nights5', artist: 'Avicii', length: 3.34, cover: 'img/album.jpg'},
+    {id: 6, name: 'The Nights6', artist: 'Avicii', length: 3.34, cover: 'img/album.jpg'},
+    {id: 7, name: 'The Nights7', artist: 'Avicii', length: 3.34, cover: 'img/album.jpg'},
+    {id: 8, name: 'The Nights8', artist: 'Avicii', length: 3.34, cover: 'img/album.jpg'},
 ]
 
 // action creator
 const fetchAllSongs = () => {
 
     console.log(`[action] ${actionType.FETCH_ALL_SONGS}`)
+    // liked, playing, checked,
+    // ... three dot operator, spread operator
 
+    // copy compound data structure, object, array, {...} [...]
+    // mdn spread operator
     return {// action
         type:actionType.FETCH_ALL_SONGS,
-        payload: songs,
+        payload: songs.map(element => ({...element, liked: false, playing: false, checked: false}))
+        // map, filter, find, some, findIndex, sort, push, slice, forEach
     }
 }
 

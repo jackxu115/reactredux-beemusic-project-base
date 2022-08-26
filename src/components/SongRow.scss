@@ -1,0 +1,46 @@
+.songRow {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  &:hover {
+    background-color: rgba(100, 100, 100, 0.4);
+    transition: ease-in-out 0.3s;
+  }
+
+  &_Index {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+  }
+
+
+  &_Content {
+    display: flex;
+    flex-direction: row;
+    min-width: 200px;
+    justify-content: space-between;
+
+    &_Title {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      padding: 10px;
+
+      &_Name {
+
+      }
+
+      &_Lyrics {
+
+      }
+    }
+
+    &_Album {
+      padding: 0 5px;
+    }
+  }
+  &_Length {
+    padding: 0 5px;
+  }
+}

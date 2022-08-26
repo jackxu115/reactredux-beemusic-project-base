@@ -8,8 +8,8 @@
     border: 1px gray solid;
     padding: 5px;
     width: 33%;
-    min-width: 320px;
-    max-width: 420px;
+    min-width: 460px;
+    max-width: 960px;
 
     .list {
       border: 1px green solid;
@@ -31,4 +31,18 @@
   font-family: Ember, Helvetica, Arial, "sans-serif";
   font-weight: bold;
   padding: 10px 0;
+}
+
+.icon {
+  display: inline-block;
+  padding: 2px;
+  width: 24px;
+  height: 24px;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active{
+    border: 1px solid white;
+    border-radius: 10px;
+  }
 }

@@ -23,7 +23,7 @@ const Home = () => {
             <div className="container">
                 <AllList />
                 <FavList />
-                <PlayList />
+                {/*<PlayList />*/}
             </div>
         </section>
     )

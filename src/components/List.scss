@@ -3,23 +3,23 @@
 .listContainer {
   display: flex;
   flex-direction: row;
+  margin: 10px;
+  border-radius: 10px;
+
 
   .songList {
-    border: 1px gray solid;
     padding: 5px;
     width: 33%;
-    min-width: 320px;
-    max-width: 960px;
+    width: 360px;
+
 
     .list {
-      border: 1px green solid;
       display: flex;
       flex-direction: column;
       height: 80vh;
 
       .listRow {
         margin: 2px;
-        border: 1px red solid;
       }
     }
   }

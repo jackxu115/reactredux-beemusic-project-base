@@ -5,8 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   padding: 0;
-  background: linear-gradient(to bottom, black, rgb(31, 34, 34));
-  height: 100vh;
+  background: linear-gradient(black, rgb(31, 34, 34)) no-repeat fixed;
   box-sizing: border-box;
   color: white;
 }
@@ -27,36 +26,25 @@ section {
   flex-direction: row;
   padding: 0 30px;
 }
-.container .row {
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-top: 20px;
-  flex-wrap: wrap;
-  max-width: 1200px;
-}
 
 .listContainer {
   display: flex;
   flex-direction: row;
+  margin: 10px;
+  border-radius: 10px;
 }
 .listContainer .songList {
-  border: 1px gray solid;
   padding: 5px;
   width: 33%;
-  min-width: 320px;
-  max-width: 960px;
+  width: 360px;
 }
 .listContainer .songList .list {
-  border: 1px green solid;
   display: flex;
   flex-direction: column;
   height: 80vh;
 }
 .listContainer .songList .list .listRow {
   margin: 2px;
-  border: 1px red solid;
 }
 
 .title {

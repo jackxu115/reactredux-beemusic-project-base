@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: row;
   padding: 10px;
+  background-color: #171010;
+  border-radius: 10px;
+  margin: 5px;
+  height: 100px;
+  justify-content: space-between;
 }
 .songRow:hover {
   background-color: rgba(100, 100, 100, 0.4);
@@ -11,10 +16,16 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 10px;
+  font-size: 20px;
+}
+.songRow_Image {
+  display: flex;
+  align-items: center;
 }
 .songRow_Content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   min-width: 100px;
   justify-content: space-between;
 }
@@ -22,13 +33,30 @@
   display: flex;
   flex-direction: column;
   text-align: start;
-  padding: 10px;
+  width: 150px;
+  padding-top: 10px;
 }
-.songRow_Content_Album {
+.songRow_Content_Title_Name {
+  font-size: 16px;
+  font-weight: 600;
+}
+.songRow_Content_Title_Artist {
+  font-size: 12px;
+  color: #787a91;
+}
+.songRow_Content_Info {
+  display: flex;
+  flex-direction: row;
+}
+.songRow_Content_Info_Album {
   padding: 0 5px;
 }
-.songRow_Length {
+.songRow_Content_Info_Length {
   padding: 0 5px;
+}
+.songRow_Button {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=SongRow.css.map */

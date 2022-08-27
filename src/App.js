@@ -9,6 +9,7 @@ function App() {
 
     const dispatch = useDispatch()
 
+    // call dispatch function to get data from API
     useEffect(() => {
         dispatch(actions.dataAction.fetchData())
     }, [])

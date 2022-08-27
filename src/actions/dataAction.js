@@ -1,6 +1,7 @@
 import axios from "axios";
 import {APIURL} from "../Helper";
 import {actionType} from "../Helper";
+import actions from "./index";
 
 
 const fetchDataBegin = () => ({
@@ -17,6 +18,7 @@ const fetchDataFailure = error => ({
     payload: {error}
 })
 
+// fetch data using async logic
 const fetchData = () => {
     console.log("fetch data")
     return async dispatch => {
@@ -24,6 +26,7 @@ const fetchData = () => {
         try {
             const res = await axios.get(APIURL)
             dispatch(fetchDataSuccess(res))
+            dispatch(actions.songAction.fetchAllSongs())
         } catch (err){
             dispatch(fetchDataFailure(err))
         }

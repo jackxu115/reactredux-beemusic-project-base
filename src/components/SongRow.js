@@ -30,8 +30,6 @@ const SongRow = ({song}) => {
                     <div className='songRow_Content_Info_Length'>{song.length}</div>
                 </div>
             </div>
-
-
             <div className='songRow_Button'>
                 <FavIcon liked={song.liked} onClick={() => dispatch(actions.songAction.likedSong(song.id))}/>
                 <CheckedIcon checked={song.checked} onClick={()=> dispatch(actions.songAction.selectSong(song.id))}/>

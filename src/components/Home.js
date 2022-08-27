@@ -12,15 +12,20 @@ import {useDispatch} from "react-redux";
 // class based component, CC
 const Home = () => {
 
-    const sfDispatch = useDispatch()
+    // const dispatch = useDispatch()
+    //
+    // useEffect(() => {
+    //     dispatch(actions.songAction.fetchAllSongs())
+    // }, [])
 
     return (
         <section>
-            <button onClick={() => sfDispatch(actions.songAction.fetchAllSongs())}>Fetch Songs</button>
+            <h1>Music Store</h1>
+            {/*<button onClick={() => sfDispatch(actions.songAction.fetchAllSongs())}>Fetch Songs</button>*/}
             <div className="container">
-                <AllList />
-                <FavList />
-                <PlayList />
+                <AllList/>
+                <FavList/>
+                <PlayList/>
             </div>
         </section>
     )

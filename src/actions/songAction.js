@@ -18,6 +18,7 @@ const songs = [
 // action creator
 const fetchAllSongs = () => {
 
+    // access state store to get data
     const state = {...store.getState()}
     const {dataReducer: {rawData: {data: {data: {data}}}}} = state
     console.log('store dataReducer', data)

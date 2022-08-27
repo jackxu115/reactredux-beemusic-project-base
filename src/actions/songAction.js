@@ -1,4 +1,6 @@
 import {actionType} from "../Helper";
+import store from "../store";
+
 
 const songs = [
     {id: 1, name: 'The Nights', artist: 'Avicii', length: 3.34, cover: 'img/album.jpg'},
@@ -11,8 +13,14 @@ const songs = [
     {id: 8, name: 'The Nights8', artist: 'Avicii', length: 3.34, cover: 'img/album.jpg'},
 ]
 
+
+
 // action creator
 const fetchAllSongs = () => {
+
+    const state = {...store.getState()}
+    const {dataReducer: {rawData: {data: {data: {data}}}}} = state
+    console.log('store dataReducer', data)
 
     console.log(`[action] ${actionType.FETCH_ALL_SONGS}`)
     // liked, playing, checked,
@@ -22,7 +30,7 @@ const fetchAllSongs = () => {
     // mdn spread operator
     return {// action
         type:actionType.FETCH_ALL_SONGS,
-        payload: songs.map(element => ({...element, liked: false, playing: false, checked: false}))
+        payload: data.map(element => ({...element, liked: false, playing: false, checked: false}))
         // map, filter, find, some, findIndex, sort, push, slice, forEach
     }
 }

@@ -5,6 +5,7 @@ import SongRow from "./SongRow";
 
 const FavList = () => {
 
+    // get the data from the Redux store state
     let songs = useSelector(state => state.songReducer.rawSongList)
 
     return (

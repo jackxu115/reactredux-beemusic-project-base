@@ -12,9 +12,6 @@ import {useDispatch} from "react-redux";
 // class based component, CC
 const Home = () => {
 
-    const [rawSongList, setRawSongList] = useState([])
-    console.log(rawSongList)
-    // dispatch: useDispatch(), mapDispatchToProps
     const sfDispatch = useDispatch()
 
     return (

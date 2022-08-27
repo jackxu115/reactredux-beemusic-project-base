@@ -4,6 +4,7 @@ import SongRow from "./SongRow";
 
 const AllList = () => {
 
+    // get data from the Redux store state
     let songs = useSelector(state => state.songReducer.rawSongList)
 
     return (

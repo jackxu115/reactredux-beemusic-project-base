@@ -1,9 +1,9 @@
 import {combineReducers} from "redux";
 import {songReducer} from "./songReducer";
-import {messageBarReducer} from "./messageBarReducer";
+import {dataReducer} from "./dataReducer";
 
 export default combineReducers(
     {
     songReducer,
-    messageBarReducer
+    dataReducer
 })

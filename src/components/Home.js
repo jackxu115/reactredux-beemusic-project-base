@@ -6,17 +6,31 @@ import AllList from "./AllList";
 import FavList from "./FavList";
 import PlayList from "./PlayList";
 import actions from "../actions";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 // functional component, FC,
 // class based component, CC
 const Home = () => {
 
-    // const dispatch = useDispatch()
-    //
-    // useEffect(() => {
-    //     dispatch(actions.songAction.fetchAllSongs())
-    // }, [])
+    let track = useSelector(state => state.songReducer.track)
+    let play = useSelector(state => state.songReducer.play)
+    console.log('track', track)
+    console.log('play', play)
+    const dispatch = useDispatch()
+
+
+    useEffect(() => {
+        const audio = new Audio(track)
+        play !== -1 && audio.play()
+        audio.onended = () => {
+            console.log('audio end')
+            dispatch(actions.songAction.playSong(play + 1))
+        }
+
+        return () => {
+            play !== -1 && audio.pause()
+        }
+    }, [play])
 
     return (
         <section>

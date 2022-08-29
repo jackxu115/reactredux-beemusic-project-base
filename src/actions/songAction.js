@@ -14,14 +14,14 @@ const songs = [
 ]
 
 
-
 // action creator
+
+
 const fetchAllSongs = () => {
 
     // access state store to get data
     const state = {...store.getState()}
     const {dataReducer: {rawData: {data: {data: {data}}}}} = state
-    console.log('store dataReducer', data)
 
     console.log(`[action] ${actionType.FETCH_ALL_SONGS}`)
     // liked, playing, checked,
@@ -30,7 +30,7 @@ const fetchAllSongs = () => {
     // copy compound data structure, object, array, {...} [...]
     // mdn spread operator
     return {// action
-        type:actionType.FETCH_ALL_SONGS,
+        type: actionType.FETCH_ALL_SONGS,
         payload: data.map(element => ({...element, liked: false, playing: false, checked: false}))
         // map, filter, find, some, findIndex, sort, push, slice, forEach
     }
@@ -41,18 +41,17 @@ const selectSong = id => {
     console.log(`[action] ${actionType.SELECT_SONG}`)
 
     return {// action
-        type:actionType.SELECT_SONG,
+        type: actionType.SELECT_SONG,
         payload: id,
     }
 }
-
 
 const likedSong = id => {
 
     console.log(`[action] ${actionType.LIKED_SONG}`)
 
     return {// action
-        type:actionType.LIKED_SONG,
+        type: actionType.LIKED_SONG,
         payload: id,
     }
 }
@@ -62,8 +61,17 @@ const playSong = id => {
     console.log(`[action] ${actionType.PLAYING_SONG}`)
 
     return {// action
-        type:actionType.PLAYING_SONG,
+        type: actionType.PLAYING_SONG,
         payload: id,
+    }
+}
+
+const setTrack = id => {
+    console.log(`[action] ${actionType.SET_TRACK}`)
+
+    return {
+        type: actionType.SET_TRACK,
+        payload: id
     }
 }
 
@@ -71,6 +79,7 @@ export default {
     fetchAllSongs,
     selectSong,
     likedSong,
-    playSong
+    playSong,
+    setTrack
 }
 

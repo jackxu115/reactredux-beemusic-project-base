@@ -4,6 +4,8 @@ import {actionType} from "../Helper";
 const initState = {
     rawSongList: [],
     id: undefined,
+    track: undefined,
+    play: -1
 }
 
 export const songReducer = (state = initState, action) => {
@@ -48,8 +50,15 @@ export const songReducer = (state = initState, action) => {
                     {...element, playing: !element.playing}
                     :
                     {...element, playing: false})
+            const play = newSongList.findIndex(element => element.playing === true)
 
-            return {...state, rawSongList: newSongList}
+            return {...state, rawSongList: newSongList, play: play}
+
+        case actionType.SET_TRACK:
+            console.log(`[reducer] ${actionType.SET_TRACK}`, action.payload)
+
+            return {...state, track: state.rawSongList[id - 1].stream}
+
 
         default:
             return state

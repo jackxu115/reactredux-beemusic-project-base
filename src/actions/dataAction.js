@@ -21,13 +21,17 @@ const fetchDataFailure = error => ({
 // fetch data using async logic
 const fetchData = () => {
     console.log("fetch data")
+
+    // The function returned receives the dispatch method as an argument,
+    // which you should use to trigger state updates,
+    // since the function by itself cannot dispatch actions event if you return an object.
     return async dispatch => {
         dispatch(fetchDataBegin())
         try {
             const res = await axios.get(APIURL)
             dispatch(fetchDataSuccess(res))
             dispatch(actions.songAction.fetchAllSongs())
-        } catch (err){
+        } catch (err) {
             dispatch(fetchDataFailure(err))
         }
     }

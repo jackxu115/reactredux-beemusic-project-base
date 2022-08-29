@@ -1,10 +1,9 @@
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone';
-
 import CheckBoxOutlineBlankTwoToneIcon from '@mui/icons-material/CheckBoxOutlineBlankTwoTone';
 import CheckBoxTwoToneIcon from '@mui/icons-material/CheckBoxTwoTone';
-
 import PlayCircleFilledWhiteOutlinedIcon from '@mui/icons-material/PlayCircleFilledWhiteOutlined';
+import PlayingGif from '../assets/images/play.gif'
 
 
 const FavIcon = ({liked, ...rest}) => {
@@ -26,7 +25,7 @@ const CheckedIcon = ({checked, ...rest}) => {
 const PlayingIcon = ({playing, ...rest}) => {
     return (
         <div className='icon' {...rest}>
-            {playing ? <img width='28px' src='img/play.gif'/> : <PlayCircleFilledWhiteOutlinedIcon/>}
+            {playing ? <img width='28px' src={PlayingGif} alt="play song"/> : <PlayCircleFilledWhiteOutlinedIcon/>}
         </div>
     )
 }

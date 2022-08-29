@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/reactredux-beemusic-project-base/static/css/main.3bab3feb.css",
-    "main.js": "/reactredux-beemusic-project-base/static/js/main.ebf6af3d.js",
+    "main.js": "/reactredux-beemusic-project-base/static/js/main.0a224cb2.js",
+    "static/media/play.gif": "/reactredux-beemusic-project-base/static/media/play.a761768b82230623b6a5.gif",
     "index.html": "/reactredux-beemusic-project-base/index.html",
     "main.3bab3feb.css.map": "/reactredux-beemusic-project-base/static/css/main.3bab3feb.css.map",
-    "main.ebf6af3d.js.map": "/reactredux-beemusic-project-base/static/js/main.ebf6af3d.js.map"
+    "main.0a224cb2.js.map": "/reactredux-beemusic-project-base/static/js/main.0a224cb2.js.map"
   },
   "entrypoints": [
     "static/css/main.3bab3feb.css",
-    "static/js/main.ebf6af3d.js"
+    "static/js/main.0a224cb2.js"
   ]
 }
